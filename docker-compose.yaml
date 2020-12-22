@@ -1,0 +1,10 @@
+ 
+version: '3.3'
+
+services:
+    jenkins:
+        container_name: jenkins
+        image: jenkins/jenkins:lts
+        volumes:
+          - ./jenkins:/var/jenkins_home
+        restart: always
