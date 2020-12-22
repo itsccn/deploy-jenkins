@@ -12,5 +12,5 @@ fi
 
 echo "开始创建Jenkins容器"
 docker-compose up -d 
-echo -e "Jenkins启动成功，下面日志内包含首次登录jenkins密码 也可以在 jenkins/secrets/initialAdminPassword 内找到"
+echo -e "\033[36m Jenkins启动成功，下面日志内包含首次登录jenkins密码 也可以在 jenkins/secrets/initialAdminPassword 内找到 \033[0m"
 docker-compose logs -f
