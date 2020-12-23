@@ -1,5 +1,4 @@
-#!/bin/bash
-
+set -vx
 command -v docker >/dev/null 2>&1 || {
   echo >&2 -e "\033[31m 请先安装docker，安装文档地址 -> https://docs.docker.com/engine/install/ \033[0m"
   exit 1
@@ -20,14 +19,14 @@ echo "开始创建Jenkins容器"
 docker-compose up -d
 success=0
 failCount=0
-while [ "$success" -eq 0 -a "$failCount" -lt 15 ]; do
+while [ "$success" = 0 -a "$failCount" -lt 15 ]; do
   if [ -f "$PWD/jenkins/secrets/initialAdminPassword" ]; then
     echo -e "\033[36m Jenkins启动成功，下面日志内为首次登录jenkins密码 也可以在 jenkins/secrets/initialAdminPassword 内找到 \033[0m"
     cat "$PWD/jenkins/secrets/initialAdminPassword"
     success=1
   else
     sleep 1
-    failCount = 'expr $failCount + 1'
+    failCount="expr $failCount + 1"
   fi
 done
 if [ "$success" -eq 0 ]; then
