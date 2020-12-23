@@ -26,7 +26,7 @@ while [ "$success" -eq 0 -a "$failCount" -lt 15 ]; do
     success=1
   else
     sleep 1
-    failCount='expr $failCount + 1'
+    failCount=$(("$failCount" + 1))
   fi
 done
 if [ "$success" -eq 0 ]; then
