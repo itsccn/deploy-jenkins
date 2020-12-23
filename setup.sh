@@ -11,7 +11,7 @@ command -v docker-compose >/dev/null 2>&1 || {
 if [ ! -d "./jenkins" ]; then
   echo "Jenkins目录不存在，准备创建目录并添加权限"
   mkdir "./jenkins"
-  sudo  777 jenkins
+  chmod 777 jenkins
   echo "Jenkins目录创建成功"
 fi
 echo "开始创建Jenkins容器"
