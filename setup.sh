@@ -27,8 +27,10 @@ while [ "$success" -eq 0 -a "$failCount" -lt 5 ]; do
     echo -e "\033[36m \n******密码结束******\n \033[0m"
     success=1
   else
+    cat "./jenkins/secrets/initialAdminPassword"
     echo -e "\033[36m Jenkins正在启动，请等待... \033[0m"
     sleep 3
+    cat "./jenkins/secrets/initialAdminPassword"
     failCount=$(("$failCount" + 1))
   fi
 done
