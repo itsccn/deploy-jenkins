@@ -1,4 +1,4 @@
-set -vx
+
 command -v docker >/dev/null 2>&1 || {
   echo >&2 -e "\033[31m 请先安装docker，安装文档地址 -> https://docs.docker.com/engine/install/ \033[0m"
   exit 1
@@ -25,7 +25,8 @@ while [ "$success" -eq 0 -a "$failCount" -lt 15 ]; do
     cat "$PWD/jenkins/secrets/initialAdminPassword"
     success=1
   else
-    sleep 1
+    echo -e "\033[36m Jenkins正在启动，请等待... \033[0m"
+    sleep 5
     failCount=$(("$failCount" + 1))
   fi
 done
