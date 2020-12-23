@@ -6,6 +6,8 @@
 
 ## 修改映射端口
 修改 `docker-compose.yaml` ports部分端口映射，左边宿主机端口，右边容器端口，执行 `docker-compose up -d`
+## 重启
+执行 `docker-compose restart` 
 ## 升级
 修改 `docker-compose.yaml` 镜像版本即可最新版本参照 https://hub.docker.com/r/jenkins/jenkins, 执行 `docker-compose up -d`
 ## 迁移
