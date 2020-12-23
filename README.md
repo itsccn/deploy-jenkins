@@ -1,3 +1,4 @@
+
 # 基于docker && docker-compose 快速部署jenkins
 
 # 快速开始
@@ -13,3 +14,5 @@
 ## 迁移
  打包 jenkins目录 -> ``` tar -zcvf jenkins.tar jenkins/ ```
  移动到另一台服务器 deploy-jenkins 目录下，运行 `tar -zxvf jenkins.tar && ./setup.sh`
+## 测试
+![ubuntu-latest-test](https://github.com/itsccn/deploy-jenkins/workflows/ubuntu-latest-test/badge.svg?branch=main)
