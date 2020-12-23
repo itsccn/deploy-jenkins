@@ -9,5 +9,5 @@ services:
          - "8080:8080"
          - "50000:50000"
         volumes:
-          - jenkins:/var/jenkins_home
+          - ./jenkins:/var/jenkins_home
         restart: always
