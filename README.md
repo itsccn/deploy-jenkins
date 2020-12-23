@@ -1,5 +1,4 @@
-# deploy-jenkins
-快速部署 Jenkins
+# 基于docker快速部署jenkins
 
-# 使用方法
+# 快速开始
  git clone https://github.com/itsccn/deploy-jenkins.git && cd deploy-jenkins && chmod +x setup.sh && ./setup.sh
