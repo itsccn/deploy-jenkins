@@ -33,7 +33,7 @@ while [ "$success" -eq 0 -a "$failCount" -lt 24 ]; do
   fi
 done
 if [ "$success" -eq 0 ]; then
-  echo >&2 -e "\033[31m Jenkins启动失败，请检查端口是否占用 \033[0m"
+  echo >&2 -e "\033[31m Jenkins可能启动失败，请检查端口是否占用，稍后为您输出日志 \033[0m"
   sleep 5
   docker-compose logs
 fi
