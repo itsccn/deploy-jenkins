@@ -11,7 +11,7 @@ command -v docker-compose >/dev/null 2>&1 || {
 if [ ! -d "./jenkins" ]; then
   echo "Jenkins目录不存在，准备创建目录并添加权限"
   mkdir "./jenkins"
-  chmod -R 777 jenkins
+  sudo chmod -R 777 jenkins
   echo "Jenkins目录创建成功"
 fi
 echo $(ls)
@@ -27,7 +27,7 @@ while [ "$success" -eq 0 -a "$failCount" -lt 10 ]; do
     echo -e "\033[36m \n******密码结束******\n \033[0m"
     success=1
   else
-    cat "./jenkins/secrets/initialAdminPassword"
+    sudo cat "./jenkins/secrets/initialAdminPassword"
     echo -e "\033[36m Jenkins正在启动，请等待... \033[0m"
     sleep 3
     failCount=$(("$failCount" + 1))
