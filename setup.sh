@@ -1,5 +1,4 @@
 #!/bin/bash
-set -vx
 command -v docker >/dev/null 2>&1 || {
   echo >&2 -e "\033[31m 请先安装docker，安装文档地址 -> https://docs.docker.com/engine/install/ \033[0m"
   exit 1
