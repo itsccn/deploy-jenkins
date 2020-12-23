@@ -14,7 +14,7 @@ if [ ! -d "./jenkins" ]; then
   chmod 777 jenkins
   echo "Jenkins目录创建成功"
 fi
-
+echo $(tree)
 echo "开始创建Jenkins容器"
 docker-compose up -d
 success=0
