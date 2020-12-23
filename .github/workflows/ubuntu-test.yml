@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run script
-        run: chmod +x setup.sh && ./setup.sh
+        run: chmod +x setup.sh && sudo ./setup.sh
 
