@@ -1,7 +1,7 @@
 #!/bin/bash
 
-command -v docker >/dev/null 2>&1 || { echo >&2 "I require docker but it's not installed.  Aborting."; exit 1; }
-command -v docker-compose  >/dev/null 2>&1 || { echo >&2 "I require docker-compose but it's not installed.  Aborting."; exit 1; }
+command -v docker >/dev/null 2>&1 || { echo >&2 -e "\033[31m 检测到未安装docker,请先安装docker，安装文档地址 -> https://docs.docker.com/engine/install/ \033[0m"; exit 1; }
+command -v docker-compose  >/dev/null 2>&1 || { echo >&2 -e "\033[31m 检测到未安装docker-compose，请先安装docker-compose，安装文档地址 -> https://docs.docker.com/compose/install/ \033[0m"; exit 1; }
 
 if [ ! -d "$PWD/jenkins" ];then
 	 echo "Jenkins目录不存在，准备创建目录并添加权限"
