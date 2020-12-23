@@ -2,7 +2,7 @@
 # 基于docker && docker-compose 快速部署jenkins
 
 # 快速开始
-``` git clone https://github.com/itsccn/deploy-jenkins.git && cd deploy-jenkins && chmod +x setup.sh && ./setup.sh ```
+``` sudo git clone https://github.com/itsccn/deploy-jenkins.git && cd deploy-jenkins && chmod +x setup.sh && ./setup.sh ```
 
 
 ## 修改映射端口
