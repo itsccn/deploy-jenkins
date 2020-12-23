@@ -9,9 +9,9 @@ command -v docker-compose >/dev/null 2>&1 || {
   exit 1
 }
 
-if [ ! -d "$PWD/jenkins" ]; then
+if [ ! -d "jenkins" ]; then
   echo "Jenkins目录不存在，准备创建目录并添加权限"
-  mkdir "$PWD/jenkins"
+  mkdir "jenkins"
   chmod 777 jenkins
   echo "Jenkins目录创建成功"
 fi
@@ -20,12 +20,11 @@ echo "开始创建Jenkins容器"
 docker-compose up -d
 success=0
 failCount=0
-pwd
 while [ "$success" -eq 0 -a "$failCount" -lt 24 ]; do
-  if [ -f "$PWD/jenkins/secrets/initialAdminPassword" ]; then
+  if [ -f "jenkins/secrets/initialAdminPassword" ]; then
     echo -e "\033[36m Jenkins启动成功，下面日志内为首次登录jenkins密码 也可以在 jenkins/secrets/initialAdminPassword 内找到 \033[0m"
     echo -e "\033[36m \n******密码开始******\n \033[0m"
-    cat "$PWD/jenkins/secrets/initialAdminPassword"
+    cat "jenkins/secrets/initialAdminPassword"
     echo -e "\033[36m \n******密码结束******\n \033[0m"
     success=1
   else
